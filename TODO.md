@@ -1,0 +1,11 @@
+- Route > resource
+- Create Migration
+- Create Model 
+- Create Seeder
+- Create Controller
+-Create View
+	- create.blade.php
+	- edit.blade.php
+	- show.blade.php
+	- index.blade.php
+	- form.blade.php
