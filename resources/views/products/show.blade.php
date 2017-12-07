@@ -9,15 +9,15 @@
 		<b> Description </b> ::{{ $product->description }}
 	</h3>
 	<h3> 
-		<b> Image 1 </b> ::<br>
+		<b> Image 1 </b> <br>
 		<img src="{{ URL::asset('uploads/' . '$product->image1')}}" height="100" width="100">
 	</h3>
 	<h3>
-		<b> Image 2 </b>::<br>
+		<b> Image 2 </b> <br>
 		<img src="{{ URL::asset('uploads/' . '$product->image2')}}" height="100" width="100">
 	</h3>
 	<h3> 
-		<b> Image 3 </b> ::<br>
+		<b> Image 3 </b> <br>
 		<img src="{{ URL::asset('uploads/' . '$product->image3')}}" height="100" width="100">
 	</h3>
 	<h3>
