@@ -30,14 +30,14 @@ class ProductsController extends Controller
 
     public function store(Request $request)
     {
-        $name1 = $request->image1->getClientOriginalName();
-        $name2 = $request->image2->getClientOriginalName();
-        $name3 = $request->image3->getClientOriginalName();
-        $name4 = $request->image1->getClientOriginalName();
-        $name1 = $request->image1->move('uploads', $request->image1->getClientOriginalName());
-        $name2 = $request->image2->move('uploads', $request->image2->getClientOriginalName());
-        $name3 = $request->image3->move('uploads', $request->image3->getClientOriginalName());
-        $name4 = $request->image4->move('uploads', $request->image4->getClientOriginalName());
+        $name1 = snake_case($request->image1->getClientOriginalName());
+        $name2 = snake_case($request->image2->getClientOriginalName());
+        $name3 = snake_case($request->image3->getClientOriginalName());
+        
+        $request->image1->move('uploads', $name1);
+        $request->image2->move('uploads', $name2);
+        $request->image3->move('uploads', $name3);
+        
         $product = Product::create([
             'name' => $request->name,
             'price' => $request->price,
@@ -46,7 +46,7 @@ class ProductsController extends Controller
             'image1' => $name1,
             'image2' => $name2,
             'image3' => $name3,
-            'featured_image' => $name4,
+            'featured_image' => $name2,
             'is_featured' => $request->is_featured
         ]);
         $product->categories()->sync( $request->category_id);

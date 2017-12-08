@@ -9,7 +9,7 @@
 		<p>Price : {{ $product->price }}</p>
 		<p> {{ $image1 = $product->image1 }} </p>
 
-		<img src="{{ URL::asset('uploads/' . '$product->image1')}}" height="200" width="200">
+		<img src='/uploads/{{ $product->image1}}' height="200" width="200">
 
 		{{ Form::open([
 			'action' => ['ProductsController@destroy', $product->id],
